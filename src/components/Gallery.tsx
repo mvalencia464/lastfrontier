@@ -8,7 +8,7 @@ const Gallery = () => {
     {
       title: "Beautiful Lawn Care",
       category: "Summer",
-      url: "https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb62a2a17f97796e1f75c2.webp""
+      url: "https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb62a2a17f97796e1f75c2.webp"
     },
     {
       title: "Professional Landscaping",
