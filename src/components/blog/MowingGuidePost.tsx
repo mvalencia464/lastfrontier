@@ -132,7 +132,7 @@ const MowingGuidePost: React.FC<MowingGuidePostProps> = ({ onBack }) => {
             <div className="mb-6">
               <img 
                 src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1267a47cbd8.webp"
-                alt="Photo of well-maintained lawn with perfect straight mowing stripes receding into distance"
+                alt="Close-up shot of person's hands holding tape measure against lawn to measure grass height"
                 className="w-full h-48 object-cover rounded-lg"
               />
             </div>

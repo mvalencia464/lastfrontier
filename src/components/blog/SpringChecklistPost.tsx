@@ -85,8 +85,8 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
               </h2>
               <div className="mb-6">
                 <img 
-                  src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e2357b4e888ba82f86.webp"
-                  alt="Person using leaf rake to gather remaining autumn leaves and winter debris from residential lawn"
+                  src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad39551aaf9c9f7.webp"
+                  alt="Person wearing gardening gloves raking colorful fallen leaves from residential lawn in Anchorage"
                   className="w-full h-48 object-cover rounded-lg"
                 />
               </div>
@@ -192,8 +192,8 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
               </h2>
             <div className="mb-6">
               <img 
-                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1183b47cbd6.webp"
-                alt="Person's hands in gardening gloves spreading dark topsoil over bare patch with grass seed bag nearby"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a147d247cbd7.webp"
+                alt="Professional landscaper using power edger to create sharp clean line between lawn and sidewalk"
                 className="w-full h-48 object-cover rounded-lg"
               />
             </div>
@@ -271,8 +271,8 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
               </h2>
             <div className="mb-6">
               <img 
-                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a147d247cbd7.webp"
-                alt="Professional landscaper using power edger to create sharp clean line between lawn and sidewalk"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1183b47cbd6.webp"
+                alt="Person's hands in gardening gloves spreading dark topsoil over bare patch with grass seed bag nearby"
                 className="w-full h-48 object-cover rounded-lg"
               />
             </div>
