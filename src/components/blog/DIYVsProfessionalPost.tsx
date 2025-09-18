@@ -294,6 +294,44 @@ const DIYVsProfessionalPost: React.FC<DIYVsProfessionalPostProps> = ({ onBack })
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 🎥 Learn More About Snow Removal Pricing & Equipment
               </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Professional Snow Removal Pricing</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/2Ei9TnvcvhQ" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Snow Removal Equipment Guide</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/0xF-4tCFGzE" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Learn More About Snow Removal Pricing & Equipment
+              </h3>
               <div className="bg-white rounded-xl p-6">
                 <ul className="text-sm text-gray-700 space-y-2">
                   <li>• <strong>How WE Price SNOW REMOVAL! 100% TRANSPARENT PRICING</strong> by Brian's Lawn Maintenance (17:54, 74K+ views)</li>

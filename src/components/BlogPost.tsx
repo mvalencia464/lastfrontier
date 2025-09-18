@@ -164,6 +164,110 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-white rounded-xl p-6">
                   <h4 className="font-semibold text-gray-900 mb-3">🎥 General Winter Preparation</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/sJHPD-wlPVM" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/183kWAh_q8g" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">🍃 Final Mowing Height</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/1UcuB0Y3z1w" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/ak-WGZDeyWg" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">🌱 Fall Fertilization</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/VugMC4buOdU" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/NmM-uTMLAPI" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">💨 Aeration & Sprinkler Winterization</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/KjKY_O1ZNfA" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/8uoeL4DmdIA" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Helpful Videos Section */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Helpful Videos to Guide You
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">🎥 General Winter Preparation</h4>
                   <ul className="text-sm text-gray-700 space-y-2">
                     <li>• <strong>How When and Why To Winterize Your Lawn</strong> by Ryan Knorr Lawn Care (5:25, 234K+ views)</li>
                     <li>• <strong>How to Prep Your Lawn For Winter</strong> by The Home Depot Canada (1:23)</li>

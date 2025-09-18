@@ -213,6 +213,44 @@ const SnowMoldPost: React.FC<SnowMoldPostProps> = ({ onBack }) => {
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 🎥 Helpful Videos About Snow Mold
               </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Snow Mold Prevention & Treatment</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/fkGmFA4hJnM" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Quick Snow Mold Fixes</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/8XFnJ3a0cJg" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Helpful Videos About Snow Mold
+              </h3>
               <div className="bg-white rounded-xl p-6">
                 <ul className="text-sm text-gray-700 space-y-2">
                   <li>• <strong>How to Get Rid of Snow Mold [Fungus & Lawn Disease]</strong> by Solutions Pest & Lawn (4:45, verified channel)</li>

@@ -285,6 +285,44 @@ const MowingGuidePost: React.FC<MowingGuidePostProps> = ({ onBack }) => {
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 🎥 Expert Mowing Guides
               </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Mowing Frequency & Timing</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/DLnYqk_Nc0Q" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Cool Season Lawn Care</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/pE6PaJ0_hXk" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Expert Mowing Guides
+              </h3>
               <div className="bg-white rounded-xl p-6">
                 <ul className="text-sm text-gray-700 space-y-2">
                   <li>• <strong>How Often Should You Mow The Lawn?</strong> by The Lawn Care Nut (1:02, verified channel)</li>

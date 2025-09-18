@@ -310,6 +310,44 @@ const AfterWinterPost: React.FC<AfterWinterPostProps> = ({ onBack }) => {
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 🎥 Videos for Post-Winter Lawn Recovery
               </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Fixing Compacted Soil</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/KS5vPl7-zKk" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Repairing Dead Lawn Spots</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/3KjYrEVxKkU" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Videos for Post-Winter Lawn Recovery
+              </h3>
               <div className="bg-white rounded-xl p-6">
                 <ul className="text-sm text-gray-700 space-y-2">
                   <li>• <strong>3 Simple Tips to Fix Compacted Soil</strong> by Chuck Morgan (6:04, 133K+ views)</li>

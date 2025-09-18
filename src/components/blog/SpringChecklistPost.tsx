@@ -303,6 +303,44 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 🎥 Alaska-Specific Spring Cleanup Videos
               </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Alaska Spring Lawn Care</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/c4WKM_IaxCA" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">Complete Spring Cleanup Guide</h4>
+                  <div className="space-y-4">
+                    <div className="aspect-video">
+                      <iframe 
+                        className="w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/35iODq0hB0A" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Alaska-Specific Spring Cleanup Videos
+              </h3>
               <div className="bg-white rounded-xl p-6">
                 <ul className="text-sm text-gray-700 space-y-2">
                   <li>• <strong>Spring lawn care tips to get your yard in top shape</strong> by Your Alaska Link TV (1:35, Alaska-specific!)</li>
