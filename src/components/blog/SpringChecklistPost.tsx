@@ -52,6 +52,15 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Hero Image */}
+        <div className="mb-12">
+          <img 
+            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4e3daea82f78.webp"
+            alt="Aerial view of well-manicured suburban lawn in Palmer after spring cleanup with freshly raked piles of debris"
+            className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             The snow is finally melting, the days are getting longer, and you can actually see your lawn again! 
@@ -74,6 +83,13 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
                 <Leaf className="w-6 h-6 text-green-600 mr-3" />
                 Clear Away Winter Debris
               </h2>
+              <div className="mb-6">
+                <img 
+                  src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e2357b4e888ba82f86.webp"
+                  alt="Person using leaf rake to gather remaining autumn leaves and winter debris from residential lawn"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+              </div>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 First things first—get all that winter mess off your lawn. We're talking leaves, branches, 
                 trash that blew in, and any other debris that accumulated over the winter months.
@@ -174,6 +190,13 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
                 <Leaf className="w-6 h-6 text-green-600 mr-3" />
                 Overseed Bare Spots
               </h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1183b47cbd6.webp"
+                alt="Person's hands in gardening gloves spreading dark topsoil over bare patch with grass seed bag nearby"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 Those bare patches won't fix themselves. Early spring is the perfect time to overseed in Palmer—
                 the soil is moist, temperatures are cool, and grass has the whole growing season ahead of it.
@@ -246,6 +269,13 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
                 <CheckCircle className="w-6 h-6 text-gray-600 mr-3" />
                 Edge and Define Borders
               </h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a147d247cbd7.webp"
+                alt="Professional landscaper using power edger to create sharp clean line between lawn and sidewalk"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 Clean, defined edges make your entire lawn look more professional and well-maintained. 
                 Plus, it helps prevent grass from creeping into flower beds and walkways.

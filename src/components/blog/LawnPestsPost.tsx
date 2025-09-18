@@ -52,6 +52,15 @@ const LawnPestsPost: React.FC<LawnPestsPostProps> = ({ onBack }) => {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Hero Image */}
+        <div className="mb-12">
+          <img 
+            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1089947cbd4.webp"
+            alt="Vivid macro photograph showing close-up of damaged lawn with visible grub worm near surface"
+            className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             You've been watering, fertilizing, and mowing religiously. Your Anchorage lawn should be the envy of the neighborhood. 
@@ -70,6 +79,13 @@ const LawnPestsPost: React.FC<LawnPestsPostProps> = ({ onBack }) => {
               <Bug className="w-6 h-6 text-red-600 mr-3" />
               Leatherjackets (Crane Fly Larvae)
             </h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1e819a30d742f6a6a.webp"
+                alt="Close-up photo of person's hand pointing to small irregular patch of dead brown grass indicating pest damage"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
               These are probably the #1 lawn pest in Anchorage, and most homeowners have never heard of them. 
               Leatherjackets are the larvae of crane flies (those big mosquito-looking bugs that aren't actually mosquitoes).
@@ -272,6 +288,13 @@ const LawnPestsPost: React.FC<LawnPestsPostProps> = ({ onBack }) => {
           {/* When to Call Professionals */}
           <div className="bg-yellow-50 rounded-xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">When to Call in the Professionals</h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4e9ff5a82f77.webp"
+                alt="Professional lawn care technician inspecting residential lawn in Anchorage using magnifying glass"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
               Some pest problems are beyond DIY solutions. Consider professional help if:
             </p>

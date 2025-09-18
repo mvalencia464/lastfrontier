@@ -52,6 +52,15 @@ const MowingGuidePost: React.FC<MowingGuidePostProps> = ({ onBack }) => {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Hero Image */}
+        <div className="mb-12">
+          <img 
+            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e110510f58243125cf.webp"
+            alt="Landscape shot of person on riding lawn mower cutting large lush green lawn in Anchorage on sunny day"
+            className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             "How often should I mow my lawn?" It's the question I get asked most, and honestly, 
@@ -120,6 +129,13 @@ const MowingGuidePost: React.FC<MowingGuidePostProps> = ({ onBack }) => {
               <Sun className="w-6 h-6 text-yellow-600 mr-3" />
               Summer (June - August): Peak Growing Season
             </h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e110510f935b3125d0.webp"
+                alt="Photo of well-maintained lawn with perfect straight mowing stripes receding into distance"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
               This is when your lawn really takes off. Long daylight hours, warm temperatures, and (hopefully) adequate moisture 
               create perfect growing conditions. Your mower is about to become your best friend.
@@ -215,6 +231,13 @@ const MowingGuidePost: React.FC<MowingGuidePostProps> = ({ onBack }) => {
           {/* Factors That Change Everything */}
           <div className="bg-gray-50 rounded-xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Factors That Change Everything</h2>
+          <div className="mb-6">
+            <img 
+              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1267a47cbd8.webp"
+              alt="Close-up shot of person's hands holding tape measure against lawn to measure grass height"
+              className="w-full h-48 object-cover rounded-lg"
+            />
+          </div>
             <p className="text-gray-700 mb-6 leading-relaxed">
               These schedules are guidelines, but several factors can throw them out the window:
             </p>

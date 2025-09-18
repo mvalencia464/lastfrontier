@@ -52,6 +52,15 @@ const AfterWinterPost: React.FC<AfterWinterPostProps> = ({ onBack }) => {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Hero Image */}
+        <div className="mb-12">
+          <img 
+            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a165dd47cbd3.webp"
+            alt="Person using power rake or dethatcher to remove matted dead grass from lawn in early spring"
+            className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             The snow has finally melted, and you're standing in your yard surveying the damage. 

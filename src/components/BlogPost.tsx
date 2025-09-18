@@ -49,6 +49,15 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Hero Image */}
+        <div className="mb-12">
+          <img 
+            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1e819a313722f6a68.webp"
+            alt="A cozy suburban home in Anchorage, Alaska, with a well-manicured lawn and snow-capped mountains in the background"
+            className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             As the days shorten and the first frost nips at the air, it's a bittersweet time for any Anchorage homeowner. You're ready for the snowy slopes and cozy nights, but you also want to ensure your lawn survives the long, harsh winter. A little work now can prevent a lot of headaches (and expense) come spring cleanup.
@@ -68,6 +77,13 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
               <span className="w-8 h-8 bg-gradient-to-r from-brand-light to-brand-dark text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
               The Final Mow: Don't Go Too Short!
             </h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4ee88fa82f76.webp"
+                alt="Person using a push mower for the final cut of the season, with lawn cut to proper height"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
               The last mow of the season is critical. You want to cut the grass low, but not so short that you scalp it. A good height for your final cut is around 2 inches.
             </p>
@@ -84,6 +100,13 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
               <span className="w-8 h-8 bg-gradient-to-r from-brand-light to-brand-dark text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
               Clear Away Debris (Especially Leaves)
             </h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad39551aaf9c9f7.webp"
+                alt="Person wearing gardening gloves raking colorful fallen leaves from residential lawn in Anchorage"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
               Fall in Anchorage brings beautiful colors, but those fallen leaves are your lawn's enemy. While a thin layer of leaves can decompose and add nutrients, a thick, matted layer will suffocate your grass and trap moisture, inviting mold and pests.
             </p>
@@ -100,6 +123,13 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
               <span className="w-8 h-8 bg-gradient-to-r from-brand-light to-brand-dark text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
               The Most Important Meal: Fall Fertilization
             </h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a172c847cbd5.webp"
+                alt="Close-up of person applying granular fertilizer to lawn using broadcast spreader"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
               If you only fertilize your lawn once a year, this is the time to do it. Fall fertilization, often called "winterizing," uses a slow-release, phosphorus-rich fertilizer that feeds the grass roots.
             </p>
@@ -116,6 +146,13 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
               <span className="w-8 h-8 bg-gradient-to-r from-brand-light to-brand-dark text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
               Aeration and Thatching: Give It Room to Breathe
             </h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad3954584f9c9fc.webp"
+                alt="Professional lawn care technician using core aerator machine on residential lawn in Anchorage"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
               Over a long Anchorage summer, your soil can become compacted, making it difficult for air, water, and nutrients to reach the roots. A thick layer of thatch (dead grass blades) can also build up, suffocating the lawn.
             </p>

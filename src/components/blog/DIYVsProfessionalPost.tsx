@@ -52,6 +52,15 @@ const DIYVsProfessionalPost: React.FC<DIYVsProfessionalPostProps> = ({ onBack })
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Hero Image */}
+        <div className="mb-12">
+          <img 
+            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e22a25a152df47cbe3.webp"
+            alt="Split image showing person struggling to shovel snow versus professional snow plow truck efficiently clearing driveway"
+            className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             It's 5:30 AM. Your alarm goes off, and you peek outside to see 8 inches of fresh snow covering your driveway. 
@@ -131,6 +140,13 @@ const DIYVsProfessionalPost: React.FC<DIYVsProfessionalPostProps> = ({ onBack })
               <span className="w-8 h-8 bg-green-200 text-green-800 rounded-full flex items-center justify-center text-sm font-bold mr-3">PRO</span>
               The Case for Professional Service
             </h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4ecfb1a82f75.webp"
+                alt="Wide shot of neatly plowed driveway in Palmer with snow perfectly cleared and professional plow truck in distance"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             
             <div className="grid md:grid-cols-2 gap-6">
               <div>

@@ -52,6 +52,15 @@ const SnowMoldPost: React.FC<SnowMoldPostProps> = ({ onBack }) => {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Hero Image */}
+        <div className="mb-12">
+          <img 
+            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e110510f22eb3125cb.webp"
+            alt="Close-up macro photo of snow mold showing circular, matted patch of white and gray fungus on lawn"
+            className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             You know that sinking feeling. The snow finally melts, you step outside excited to see your lawn again, and... there it is. 
@@ -67,6 +76,13 @@ const SnowMoldPost: React.FC<SnowMoldPostProps> = ({ onBack }) => {
           {/* What is Snow Mold */}
           <div className="bg-gray-50 rounded-xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">What Exactly is Snow Mold?</h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1e819a3fbe62f6a69.webp"
+                alt="Landscape shot of healthy lawn in Anchorage with thin layer of hoarfrost covering grass blades"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
               Snow mold is a fungal disease that thrives under snow cover. In Anchorage, we see two main types:
             </p>
@@ -132,6 +148,13 @@ const SnowMoldPost: React.FC<SnowMoldPostProps> = ({ onBack }) => {
           {/* Prevention */}
           <div className="bg-gradient-to-r from-brand-light to-brand-dark rounded-xl p-8 text-white mb-8">
             <h2 className="text-2xl font-bold mb-4">How to Prevent Snow Mold (Do This in Fall)</h2>
+            <div className="mb-6">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad3954fe5f9c9f8.webp"
+                alt="Professional lawn care technician in branded uniform applying preventative fungicide to lawn"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
             <p className="text-blue-100 mb-6 leading-relaxed">
               Prevention is way easier than treatment. Here's your fall action plan:
             </p>
