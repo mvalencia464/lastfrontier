@@ -142,8 +142,8 @@ const DIYVsProfessionalPost: React.FC<DIYVsProfessionalPostProps> = ({ onBack })
             </h2>
             <div className="mb-6">
               <img 
-                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4ecfb1a82f75.webp"
-                alt="Wide shot of neatly plowed driveway in Palmer with snow perfectly cleared and professional plow truck in distance"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e23ad3951db4f9ca04.webp"
+                alt="Person's hand holding snow shovel, looking exhausted and frustrated, with massive snow berm blocking driveway"
                 className="w-full h-48 object-cover rounded-lg"
               />
             </div>
