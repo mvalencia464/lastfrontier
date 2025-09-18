@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, FileText } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  onNavigateToBlog?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onNavigateToBlog }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
@@ -42,6 +46,12 @@ const Header = () => {
             <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-brand-light transition-colors">
               Contact
             </button>
+            {onNavigateToBlog && (
+              <button onClick={onNavigateToBlog} className="text-gray-700 hover:text-brand-light transition-colors flex items-center">
+                <FileText className="w-4 h-4 mr-1" />
+                Blog
+              </button>
+            )}
             <a href="tel:907-440-7160" className="flex items-center bg-gradient-to-r from-brand-light to-brand-dark text-white px-4 py-2 rounded-lg hover:from-brand-dark hover:to-brand-light transition-all duration-300">
               <Phone className="w-4 h-4 mr-2" />
               907-440-7160
@@ -76,6 +86,12 @@ const Header = () => {
               <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-brand-light transition-colors text-left">
                 Contact
               </button>
+              {onNavigateToBlog && (
+                <button onClick={onNavigateToBlog} className="text-gray-700 hover:text-brand-light transition-colors text-left flex items-center">
+                  <FileText className="w-4 h-4 mr-2" />
+                  Blog
+                </button>
+              )}
               <a href="tel:907-440-7160" className="flex items-center bg-gradient-to-r from-brand-light to-brand-dark text-white px-4 py-2 rounded-lg hover:from-brand-dark hover:to-brand-light transition-all duration-300 w-fit">
                 <Phone className="w-4 h-4 mr-2" />
                 907-440-7160
