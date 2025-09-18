@@ -217,7 +217,7 @@ const AfterWinterPost: React.FC<AfterWinterPostProps> = ({ onBack }) => {
             <div className="bg-gradient-to-r from-brand-light/10 to-brand-dark/10 rounded-lg p-4 mt-4">
               <p className="text-gray-700 leading-relaxed">
                 <strong className="text-brand-dark">Timing matters:</strong> In Anchorage, this is usually late April to early May. 
-                Too early and you're wasting money—the grass can't use it yet.
+                Too early and you're wasting money—the grass can\'t use it yet.
               </p>
             </div>
           </div>

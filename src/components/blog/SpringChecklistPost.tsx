@@ -92,7 +92,7 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
               <div className="bg-gradient-to-r from-brand-light/10 to-brand-dark/10 rounded-lg p-4 mt-4">
                 <p className="text-gray-700 leading-relaxed">
                   <strong className="text-brand-dark">Why it matters:</strong> Debris blocks sunlight and traps moisture, 
-                  creating perfect conditions for disease and preventing new growth. Plus, you can't see what you're working with until it's all cleared away.
+                  creating perfect conditions for disease and preventing new growth. Plus, you can't see what you\'re working with until it's all cleared away.
                 </p>
               </div>
             </div>
