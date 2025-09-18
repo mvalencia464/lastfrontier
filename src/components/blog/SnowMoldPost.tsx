@@ -208,6 +208,20 @@ const SnowMoldPost: React.FC<SnowMoldPostProps> = ({ onBack }) => {
 
           {/* CTA */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center">
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Helpful Videos About Snow Mold
+              </h3>
+              <div className="bg-white rounded-xl p-6">
+                <ul className="text-sm text-gray-700 space-y-2">
+                  <li>• <strong>How to Get Rid of Snow Mold [Fungus & Lawn Disease]</strong> by Solutions Pest & Lawn (4:45, verified channel)</li>
+                  <li>• <strong>Snow Mold? Here's How to Fix It!</strong> by Summit Lawns (0:27, recent)</li>
+                  <li>• <strong>Preventing Snow Mold In The Lawn : Early Spring Tips</strong> by The Lawn Care Nut (2:06, verified channel)</li>
+                </ul>
+              </div>
+            </div>
+            
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Don't Want to Deal with Snow Mold This Year?
             </h3>

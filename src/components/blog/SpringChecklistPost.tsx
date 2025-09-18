@@ -298,6 +298,20 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
 
           {/* CTA */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center">
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Alaska-Specific Spring Cleanup Videos
+              </h3>
+              <div className="bg-white rounded-xl p-6">
+                <ul className="text-sm text-gray-700 space-y-2">
+                  <li>• <strong>Spring lawn care tips to get your yard in top shape</strong> by Your Alaska Link TV (1:35, Alaska-specific!)</li>
+                  <li>• <strong>Anchorage Spring Clean Up</strong> by Alaska Premier Services (Anchorage-specific)</li>
+                  <li>• <strong>All 10 Spring Lawn Care Steps // In Order</strong> by Turf Mechanic (10:34, 73K+ views)</li>
+                </ul>
+              </div>
+            </div>
+            
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Want to Skip the Spring Cleanup Hassle?
             </h3>

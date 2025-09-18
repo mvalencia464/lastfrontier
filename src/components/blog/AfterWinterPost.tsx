@@ -305,6 +305,20 @@ const AfterWinterPost: React.FC<AfterWinterPostProps> = ({ onBack }) => {
 
           {/* CTA */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center">
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Videos for Post-Winter Lawn Recovery
+              </h3>
+              <div className="bg-white rounded-xl p-6">
+                <ul className="text-sm text-gray-700 space-y-2">
+                  <li>• <strong>3 Simple Tips to Fix Compacted Soil</strong> by Chuck Morgan (6:04, 133K+ views)</li>
+                  <li>• <strong>Fixing a dead spot in the lawn</strong> by The Lawn Review (0:34, 4K quality)</li>
+                  <li>• <strong>How to Fix Dead Lawn?</strong> by AMSLandscaping (0:19, 96K+ views)</li>
+                </ul>
+              </div>
+            </div>
+            
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Want Professional Help with Lawn Recovery?
             </h3>

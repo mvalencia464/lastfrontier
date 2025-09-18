@@ -156,6 +156,46 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
 
           {/* CTA */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center">
+            {/* Helpful Videos Section */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Helpful Videos to Guide You
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">🎥 General Winter Preparation</h4>
+                  <ul className="text-sm text-gray-700 space-y-2">
+                    <li>• <strong>How When and Why To Winterize Your Lawn</strong> by Ryan Knorr Lawn Care (5:25, 234K+ views)</li>
+                    <li>• <strong>How to Prep Your Lawn For Winter</strong> by The Home Depot Canada (1:23)</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">🍃 Final Mowing Height</h4>
+                  <ul className="text-sm text-gray-700 space-y-2">
+                    <li>• <strong>How Short Should I Cut My Grass For The Fall?</strong> by Green Grounds Lawn & Pest (0:39)</li>
+                    <li>• <strong>Changing Fall Lawn Mowing Height</strong> by Grass Daddy (4:43)</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">🌱 Fall Fertilization</h4>
+                  <ul className="text-sm text-gray-700 space-y-2">
+                    <li>• <strong>FALL FERTILIZER - The Secret To A Beautiful Lawn Year Round!</strong> by The Lawn Lover (8:10, 4K)</li>
+                    <li>• <strong>Why Feeding Your Lawn in Fall Means A Greener Spring</strong> by Scotts Lawn (0:16)</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">💨 Aeration & Sprinkler Winterization</h4>
+                  <ul className="text-sm text-gray-700 space-y-2">
+                    <li>• <strong>Aeration vs Dethatching // Which should YOU do??</strong> by The Lawn Whisperer (9:32, 770K+ views)</li>
+                    <li>• <strong>DIY: How to Winterize Your Sprinkler System</strong> by DIY•BRY (8:40, 94K+ views)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Ready to get a head start on your fall lawn care?
             </h3>

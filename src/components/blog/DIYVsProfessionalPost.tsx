@@ -289,6 +289,20 @@ const DIYVsProfessionalPost: React.FC<DIYVsProfessionalPostProps> = ({ onBack })
 
           {/* CTA */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center">
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Learn More About Snow Removal Pricing & Equipment
+              </h3>
+              <div className="bg-white rounded-xl p-6">
+                <ul className="text-sm text-gray-700 space-y-2">
+                  <li>• <strong>How WE Price SNOW REMOVAL! 100% TRANSPARENT PRICING</strong> by Brian's Lawn Maintenance (17:54, 74K+ views)</li>
+                  <li>• <strong>How to Price Residential Snow Clearing</strong> by Lawn Thumbs (7:30, 4K quality)</li>
+                  <li>• <strong>The Ultimate Snow Clearing Equipment Showdown</strong> by DIY PETE (19:14, 520K+ views)</li>
+                </ul>
+              </div>
+            </div>
+            
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Ready to Skip the 5 AM Snow Shovel Routine?
             </h3>

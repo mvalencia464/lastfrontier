@@ -280,6 +280,20 @@ const MowingGuidePost: React.FC<MowingGuidePostProps> = ({ onBack }) => {
 
           {/* CTA */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center">
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Expert Mowing Guides
+              </h3>
+              <div className="bg-white rounded-xl p-6">
+                <ul className="text-sm text-gray-700 space-y-2">
+                  <li>• <strong>How Often Should You Mow The Lawn?</strong> by The Lawn Care Nut (1:02, verified channel)</li>
+                  <li>• <strong>Year-Round Cool-Season Lawn Care Calendar</strong> by DoMyOwn (4:16, 4K, CC available)</li>
+                  <li>• <strong>How to Mow Your Lawn Correctly // Cool Season Lawn Guide</strong> by The Perfect Cut Lawn Care (2:48, 4K, CC available)</li>
+                </ul>
+              </div>
+            </div>
+            
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Don't Want to Worry About Your Mowing Schedule?
             </h3>

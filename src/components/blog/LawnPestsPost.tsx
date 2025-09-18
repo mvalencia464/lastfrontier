@@ -298,6 +298,20 @@ const LawnPestsPost: React.FC<LawnPestsPostProps> = ({ onBack }) => {
 
           {/* CTA */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center">
+            {/* Helpful Videos Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                🎥 Video Guides for Pest Control
+              </h3>
+              <div className="bg-white rounded-xl p-6">
+                <ul className="text-sm text-gray-700 space-y-2">
+                  <li>• <strong>How to Get Rid of Grubs Guaranteed (4 Easy Steps)</strong> by Solutions Pest & Lawn (5:49, 718K+ views, verified)</li>
+                  <li>• <strong>Chafer Grubs & Leatherjackets: The Damage They Do & How to Get Rid of Them</strong> by GreensleevesLawnCare (2:16)</li>
+                  <li>• <strong>8 Natural Ways to Exterminate Garden GRUBS Naturally</strong> by Natural Health Remedies (9:18, 292K+ views, verified)</li>
+                </ul>
+              </div>
+            </div>
+            
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Tired of Fighting Lawn Pests?
             </h3>
