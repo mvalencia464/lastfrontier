@@ -55,7 +55,7 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
         {/* Hero Image */}
         <div className="mb-12">
           <img 
-            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4e3daea82f78.webp"
+            src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4e3daea82f78.webp"
             alt="Aerial view of well-manicured suburban lawn in Palmer after spring cleanup with freshly raked piles of debris"
             className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
           />
@@ -85,7 +85,7 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
               </h2>
               <div className="mb-6">
                 <img 
-                  src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e2357b4e888ba82f86.webp"
+                  src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e2357b4e888ba82f86.webp"
                   alt="Person using leaf rake to gather remaining autumn leaves and winter debris from residential lawn"
                   className="w-full h-48 object-cover rounded-lg"
                 />
@@ -192,7 +192,7 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
               </h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1183b47cbd6.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1183b47cbd6.webp"
                 alt="Person's hands in gardening gloves spreading dark topsoil over bare patch with grass seed bag nearby"
                 className="w-full h-48 object-cover rounded-lg"
               />
@@ -271,7 +271,7 @@ const SpringChecklistPost: React.FC<SpringChecklistPostProps> = ({ onBack }) => 
               </h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a147d247cbd7.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a147d247cbd7.webp"
                 alt="Professional landscaper using power edger to create sharp clean line between lawn and sidewalk"
                 className="w-full h-48 object-cover rounded-lg"
               />

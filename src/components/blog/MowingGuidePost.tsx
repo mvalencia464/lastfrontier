@@ -55,7 +55,7 @@ const MowingGuidePost: React.FC<MowingGuidePostProps> = ({ onBack }) => {
         {/* Hero Image */}
         <div className="mb-12">
           <img 
-            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e110510f58243125cf.webp"
+            src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e110510f58243125cf.webp"
             alt="Landscape shot of person on riding lawn mower cutting large lush green lawn in Anchorage on sunny day"
             className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
           />
@@ -131,7 +131,7 @@ const MowingGuidePost: React.FC<MowingGuidePostProps> = ({ onBack }) => {
             </h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e110510f935b3125d0.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1267a47cbd8.webp"
                 alt="Photo of well-maintained lawn with perfect straight mowing stripes receding into distance"
                 className="w-full h-48 object-cover rounded-lg"
               />

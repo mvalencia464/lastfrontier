@@ -52,7 +52,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
         {/* Hero Image */}
         <div className="mb-12">
           <img 
-            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1e819a313722f6a68.webp"
+            src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1e819a313722f6a68.webp"
             alt="A cozy suburban home in Anchorage, Alaska, with a well-manicured lawn and snow-capped mountains in the background"
             className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
           />
@@ -79,7 +79,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
             </h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4ee88fa82f76.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4ee88fa82f76.webp"
                 alt="Person using a push mower for the final cut of the season, with lawn cut to proper height"
                 className="w-full h-48 object-cover rounded-lg"
               />
@@ -102,7 +102,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
             </h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad39551aaf9c9f7.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad39551aaf9c9f7.webp"
                 alt="Person wearing gardening gloves raking colorful fallen leaves from residential lawn in Anchorage"
                 className="w-full h-48 object-cover rounded-lg"
               />
@@ -125,7 +125,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
             </h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a172c847cbd5.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a172c847cbd5.webp"
                 alt="Close-up of person applying granular fertilizer to lawn using broadcast spreader"
                 className="w-full h-48 object-cover rounded-lg"
               />
@@ -148,7 +148,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ onBack }) => {
             </h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad3954584f9c9fc.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad3954584f9c9fc.webp"
                 alt="Professional lawn care technician using core aerator machine on residential lawn in Anchorage"
                 className="w-full h-48 object-cover rounded-lg"
               />

@@ -55,7 +55,7 @@ const LawnPestsPost: React.FC<LawnPestsPostProps> = ({ onBack }) => {
         {/* Hero Image */}
         <div className="mb-12">
           <img 
-            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1089947cbd4.webp"
+            src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e12a25a1089947cbd4.webp"
             alt="Vivid macro photograph showing close-up of damaged lawn with visible grub worm near surface"
             className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
           />
@@ -81,7 +81,7 @@ const LawnPestsPost: React.FC<LawnPestsPostProps> = ({ onBack }) => {
             </h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1e819a30d742f6a6a.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1e819a30d742f6a6a.webp"
                 alt="Close-up photo of person's hand pointing to small irregular patch of dead brown grass indicating pest damage"
                 className="w-full h-48 object-cover rounded-lg"
               />
@@ -290,7 +290,7 @@ const LawnPestsPost: React.FC<LawnPestsPostProps> = ({ onBack }) => {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">When to Call in the Professionals</h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4e9ff5a82f77.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1357b4e9ff5a82f77.webp"
                 alt="Professional lawn care technician inspecting residential lawn in Anchorage using magnifying glass"
                 className="w-full h-48 object-cover rounded-lg"
               />

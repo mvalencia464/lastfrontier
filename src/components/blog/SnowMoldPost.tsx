@@ -55,7 +55,7 @@ const SnowMoldPost: React.FC<SnowMoldPostProps> = ({ onBack }) => {
         {/* Hero Image */}
         <div className="mb-12">
           <img 
-            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e110510f22eb3125cb.webp"
+            src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e110510f22eb3125cb.webp"
             alt="Close-up macro photo of snow mold showing circular, matted patch of white and gray fungus on lawn"
             className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
           />
@@ -78,7 +78,7 @@ const SnowMoldPost: React.FC<SnowMoldPostProps> = ({ onBack }) => {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">What Exactly is Snow Mold?</h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1e819a3fbe62f6a69.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e1e819a3fbe62f6a69.webp"
                 alt="Landscape shot of healthy lawn in Anchorage with thin layer of hoarfrost covering grass blades"
                 className="w-full h-48 object-cover rounded-lg"
               />
@@ -150,7 +150,7 @@ const SnowMoldPost: React.FC<SnowMoldPostProps> = ({ onBack }) => {
             <h2 className="text-2xl font-bold mb-4">How to Prevent Snow Mold (Do This in Fall)</h2>
             <div className="mb-6">
               <img 
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad3954fe5f9c9f8.webp"
+                src="https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/68cb74e13ad3954fe5f9c9f8.webp"
                 alt="Professional lawn care technician in branded uniform applying preventative fungicide to lawn"
                 className="w-full h-48 object-cover rounded-lg"
               />
