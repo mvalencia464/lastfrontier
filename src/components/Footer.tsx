@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <img 
-                src="/public/image.png" 
+                src="/image.png" 
                 alt="Last Frontier Lawn Company" 
                 className="h-12 w-auto"
               />

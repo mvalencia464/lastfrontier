@@ -19,7 +19,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/public/image.png" 
+              src="/image.png" 
               alt="Last Frontier Lawn Company" 
               className="h-12 w-auto"
             />
