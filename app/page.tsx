@@ -216,7 +216,10 @@ export default function HomePage() {
                 {businessInfo.phone}
               </a>
             </div>
-            <button className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/40 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group">
+            <button 
+              onClick={() => setIsQuoteModalOpen(true)}
+              className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/40 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group"
+            >
               <span>Get a Quote</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -727,7 +730,10 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for a better looking lawn?</h2>
             <p className="text-emerald-200 text-lg max-w-2xl mx-auto mb-10">Join your neighbors in Anchorage & Palmer. Get a free, no-obligation quote today and let us handle the hard work.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="bg-white text-emerald-900 font-bold py-4 px-8 rounded-xl shadow-xl hover:bg-emerald-50 transition-colors w-full sm:w-auto">
+              <button 
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="bg-white text-emerald-900 font-bold py-4 px-8 rounded-xl shadow-xl hover:bg-emerald-50 transition-colors w-full sm:w-auto"
+              >
                 Get Started Now
               </button>
               <a href={`tel:${businessInfo.phone}`} className="flex items-center gap-2 text-white font-bold hover:text-emerald-200 transition-colors px-6 py-4">
