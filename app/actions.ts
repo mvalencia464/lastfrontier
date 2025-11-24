@@ -72,7 +72,7 @@ export async function submitQuote(data: QuoteData): Promise<SubmitQuoteResponse>
       address1: address,
       locationId: GHL_LOCATION_ID,
       source: 'Last Frontier Website',
-      tags: ['Website Lead', 'Quote Request', service || 'General'].filter(Boolean),
+      tags: ['Website Lead', 'Quote Request', 'new_lead', service || 'General'].filter(Boolean),
       customFields: [
         {
           key: 'primary_service',
