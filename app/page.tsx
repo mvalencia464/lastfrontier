@@ -38,7 +38,7 @@ export default function HomePage() {
   const [formStep, setFormStep] = useState(1);
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
-  const [contactInfo, setContactInfo] = useState({ address: '', email: '', phone: '' });
+  const [contactInfo, setContactInfo] = useState({ address: '', email: '', phone: '', smsConsent: false });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [contactId, setContactId] = useState<string | null>(null);
@@ -51,7 +51,7 @@ export default function HomePage() {
   const [modalFormStep, setModalFormStep] = useState(1);
   const [modalSelectedService, setModalSelectedService] = useState<string | null>(null);
   const [modalSelectedAddons, setModalSelectedAddons] = useState<string[]>([]);
-  const [modalContactInfo, setModalContactInfo] = useState({ address: '', email: '', phone: '' });
+  const [modalContactInfo, setModalContactInfo] = useState({ address: '', email: '', phone: '', smsConsent: false });
   const [isModalSubmitting, setIsModalSubmitting] = useState(false);
   const [modalSubmitStatus, setModalSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [modalContactId, setModalContactId] = useState<string | null>(null);
@@ -145,7 +145,7 @@ export default function HomePage() {
             setModalFormStep(1);
             setModalSelectedService(null);
             setModalSelectedAddons([]);
-            setModalContactInfo({ address: '', email: '', phone: '' });
+            setModalContactInfo({ address: '', email: '', phone: '', smsConsent: false });
             setModalSubmitStatus('idle');
             setModalContactId(null);
             setModalUploadedImage(null);
@@ -154,7 +154,7 @@ export default function HomePage() {
             setFormStep(1);
             setSelectedService(null);
             setSelectedAddons([]);
-            setContactInfo({ address: '', email: '', phone: '' });
+            setContactInfo({ address: '', email: '', phone: '', smsConsent: false });
             setSubmitStatus('idle');
             setContactId(null);
             setUploadedImage(null);
@@ -672,7 +672,7 @@ export default function HomePage() {
                               setFormStep(1);
                               setSelectedService(null);
                               setSelectedAddons([]);
-                              setContactInfo({ address: '', email: '', phone: '' });
+                              setContactInfo({ address: '', email: '', phone: '', smsConsent: false });
                               setSubmitStatus('idle');
                               setContactId(null);
                             }}
@@ -710,6 +710,25 @@ export default function HomePage() {
                               onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
                               className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500"
                             />
+                          </div>
+                          <div className="flex items-start gap-3 pt-2">
+                            <div className="relative flex items-start">
+                              <div className="flex h-6 items-center">
+                                <input
+                                  id="sms-consent"
+                                  name="sms-consent"
+                                  type="checkbox"
+                                  checked={contactInfo.smsConsent}
+                                  onChange={(e) => setContactInfo({ ...contactInfo, smsConsent: e.target.checked })}
+                                  className="h-4 w-4 rounded border-slate-700 bg-slate-800 text-emerald-600 focus:ring-emerald-500/20 focus:ring-offset-0"
+                                />
+                              </div>
+                              <div className="ml-3 text-xs leading-5">
+                                <label htmlFor="sms-consent" className="font-medium text-slate-300">
+                                  I agree to receive marketing messaging from Last Frontier Lawns at the phone number provided above. I understand I will receive 2 messages a month, data rates may apply, reply STOP to opt out
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
 
@@ -1254,6 +1273,25 @@ export default function HomePage() {
                               onChange={(e) => setModalContactInfo({ ...modalContactInfo, phone: e.target.value })}
                               className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500"
                             />
+                          </div>
+                          <div className="flex items-start gap-3 pt-2">
+                            <div className="relative flex items-start">
+                              <div className="flex h-6 items-center">
+                                <input
+                                  id="modal-sms-consent"
+                                  name="modal-sms-consent"
+                                  type="checkbox"
+                                  checked={modalContactInfo.smsConsent}
+                                  onChange={(e) => setModalContactInfo({ ...modalContactInfo, smsConsent: e.target.checked })}
+                                  className="h-4 w-4 rounded border-slate-700 bg-slate-800 text-emerald-600 focus:ring-emerald-500/20 focus:ring-offset-0"
+                                />
+                              </div>
+                              <div className="ml-3 text-xs leading-5">
+                                <label htmlFor="modal-sms-consent" className="font-medium text-slate-300">
+                                  I agree to receive marketing messaging from Last Frontier Lawns at the phone number provided above. I understand I will receive 2 messages a month, data rates may apply, reply STOP to opt out
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
 

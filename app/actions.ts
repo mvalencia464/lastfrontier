@@ -12,6 +12,7 @@ type QuoteData = {
   address: string;
   email: string;
   phone: string;
+  smsConsent?: boolean;
 };
 
 type UploadImageResponse = {
@@ -22,7 +23,7 @@ type UploadImageResponse = {
 
 export async function submitQuote(data: QuoteData): Promise<SubmitQuoteResponse> {
   try {
-    const { service, addons, address, email, phone } = data;
+    const { service, addons, address, email, phone, smsConsent } = data;
 
     // Extract name from email if not provided separately
     const emailName = email.split('@')[0];
@@ -72,7 +73,7 @@ export async function submitQuote(data: QuoteData): Promise<SubmitQuoteResponse>
       address1: address,
       locationId: GHL_LOCATION_ID,
       source: 'Last Frontier Website',
-      tags: ['Website Lead', 'Quote Request', 'new_lead', service || 'General'].filter(Boolean),
+      tags: ['Website Lead', 'Quote Request', 'new_lead', smsConsent ? 'sms_opt_in' : null, service || 'General'].filter(Boolean),
       customFields: [
         {
           key: 'primary_service',
@@ -89,6 +90,10 @@ export async function submitQuote(data: QuoteData): Promise<SubmitQuoteResponse>
         {
           key: 'submission_date',
           field_value: new Date().toISOString(),
+        },
+        {
+          key: 'sms_consent',
+          field_value: smsConsent ? 'true' : 'false',
         },
       ],
     };
