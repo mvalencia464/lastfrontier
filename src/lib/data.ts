@@ -4,7 +4,7 @@ export const businessInfo = {
   phone: "907-440-7160",
   email: "lastfrontierlawnco@gmail.com",
   website: "https://lastfrontierlawns.com/",
-  serviceAreas: "Anchorage & Palmer",
+  serviceAreas: "Anchorage and The Valley",
   rating: "5.0",
   reviewCount: "50+",
 };

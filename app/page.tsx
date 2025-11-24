@@ -28,6 +28,7 @@ import {
 import ReviewsSection from '../src/components/ReviewsSection';
 import AddressAutocomplete from '../src/components/AddressAutocomplete';
 import { submitQuote, uploadProjectImage } from './actions';
+import Link from 'next/link';
 
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -241,7 +242,7 @@ export default function HomePage() {
     phone: "907-440-7160",
     email: "lastfrontierlawnco@gmail.com",
     website: "https://lastfrontierlawns.com/",
-    serviceAreas: "Anchorage & Palmer",
+    serviceAreas: "Anchorage and The Valley",
     rating: "5.0",
     reviewCount: "50+",
   };
@@ -361,10 +362,10 @@ export default function HomePage() {
           <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-2xl animate-in slide-in-from-top-5 duration-200">
             <div className="p-4 grid grid-cols-2 gap-3">
               {[
-                { name: 'Spring Cleanup', icon: Leaf, color: 'text-emerald-600', bg: 'bg-emerald-50' },
-                { name: 'Lawn Mowing', icon: Sun, color: 'text-amber-500', bg: 'bg-amber-50' },
-                { name: 'Snow Plowing', icon: Snowflake, color: 'text-sky-500', bg: 'bg-sky-50' },
-                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', onClick: () => { setIsQuoteModalOpen(true); setModalSelectedService('lights'); setModalFormStep(1); } },
+                { name: 'Spring Cleanup', icon: Leaf, color: 'text-emerald-600', bg: 'bg-emerald-50', href: '#' },
+                { name: 'Lawn Mowing', icon: Sun, color: 'text-amber-500', bg: 'bg-amber-50', href: '#' },
+                { name: 'Snow Plowing', icon: Snowflake, color: 'text-sky-500', bg: 'bg-sky-50', href: '#' },
+                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', href: '#', onClick: () => { setIsQuoteModalOpen(true); setModalSelectedService('lights'); setModalFormStep(1); } },
               ].map((item) => (
                 <a key={item.name} href={item.href || '#'} className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform`}>
                   <item.icon className={`w-6 h-6 ${item.color}`} />
@@ -989,7 +990,7 @@ export default function HomePage() {
 
           <div className="relative z-10 p-12 text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for a better looking lawn?</h2>
-            <p className="text-emerald-200 text-lg max-w-2xl mx-auto mb-10">Join your neighbors in Anchorage & Palmer. Get a free, no-obligation quote today and let us handle the hard work.</p>
+            <p className="text-emerald-200 text-lg max-w-2xl mx-auto mb-10">Join your neighbors in Anchorage and The Valley. Get a free, no-obligation quote today and let us handle the hard work.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={() => setIsQuoteModalOpen(true)}

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Last Frontier Lawns | Alaska Lawn Care & Snow Removal",
-  description: "Professional lawn care services in Anchorage & Palmer. Spring cleanups, mowing, fertilizing, and snow plowing.",
+  description: "Professional lawn care services in Anchorage and The Valley. Spring cleanups, mowing, fertilizing, and snow plowing."
 };
 
 export default function RootLayout({
