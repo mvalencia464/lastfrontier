@@ -362,15 +362,34 @@ export default function HomePage() {
           <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-2xl animate-in slide-in-from-top-5 duration-200">
             <div className="p-4 grid grid-cols-2 gap-3">
               {[
-                { name: 'Spring Cleanup', icon: Leaf, color: 'text-emerald-600', bg: 'bg-emerald-50', href: '#' },
-                { name: 'Lawn Mowing', icon: Sun, color: 'text-amber-500', bg: 'bg-amber-50', href: '#' },
-                { name: 'Snow Plowing', icon: Snowflake, color: 'text-sky-500', bg: 'bg-sky-50', href: '#' },
-                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', href: '#', onClick: () => { setIsQuoteModalOpen(true); setModalSelectedService('lights'); setModalFormStep(1); } },
+                { name: 'Spring Cleanup', icon: Leaf, color: 'text-emerald-600', bg: 'bg-emerald-50', onClick: () => setIsQuoteModalOpen(true) },
+                { name: 'Lawn Mowing', icon: Sun, color: 'text-amber-500', bg: 'bg-amber-50', onClick: () => setIsQuoteModalOpen(true) },
+                { name: 'Snow Plowing', icon: Snowflake, color: 'text-sky-500', bg: 'bg-sky-50', onClick: () => setIsQuoteModalOpen(true) },
+                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', href: '/christmas-lights' },
               ].map((item) => (
-                <a key={item.name} href={item.href || '#'} className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform`}>
-                  <item.icon className={`w-6 h-6 ${item.color}`} />
-                  <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
-                </a>
+                item.onClick ? (
+                  <button
+                    key={item.name}
+                    onClick={() => {
+                      item.onClick!();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform w-full`}
+                  >
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                    <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
+                  </button>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href || '#'}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform block`}
+                  >
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                    <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
+                  </Link>
+                )
               ))}
             </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100">
@@ -1036,7 +1055,7 @@ export default function HomePage() {
               <li><a href="#summer" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Lawn Mowing</a></li>
               <li><a href="#fall" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Weed Control</a></li>
               <li><a href="#winter" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Snow Plowing</a></li>
-              <li><Link href="/?service=lights" className="hover:text-red-400 transition-colors flex items-center gap-2"><Sparkle className="w-3 h-3" /> Christmas Lights</Link></li>
+              <li><Link href="/christmas-lights" className="hover:text-red-400 transition-colors flex items-center gap-2"><Sparkle className="w-3 h-3" /> Christmas Lights</Link></li>
             </ul>
           </div>
 
