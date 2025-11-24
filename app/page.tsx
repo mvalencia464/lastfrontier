@@ -365,33 +365,20 @@ export default function HomePage() {
                 { name: 'Spring Cleanup', icon: Leaf, color: 'text-emerald-600', bg: 'bg-emerald-50', onClick: () => setIsQuoteModalOpen(true) },
                 { name: 'Lawn Mowing', icon: Sun, color: 'text-amber-500', bg: 'bg-amber-50', onClick: () => setIsQuoteModalOpen(true) },
                 { name: 'Snow Plowing', icon: Snowflake, color: 'text-sky-500', bg: 'bg-sky-50', onClick: () => setIsQuoteModalOpen(true) },
-                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', href: '/christmas-lights' },
+                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', onClick: () => { setIsQuoteModalOpen(true); setModalSelectedService('lights'); } },
               ].map((item) => (
-                item.onClick ? (
-                  <button
-                    key={item.name}
-                    onClick={() => {
-                      item.onClick!();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform w-full`}
-                  >
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
-                    <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
-                  </button>
-                ) : (
-                  <Link
-                    key={item.name}
-                    href={item.href || '#'}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform block`}
-                  >
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
-                    <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
-                  </Link>
-                )
-              ))}
-            </div>
+                <button
+                  key={item.name}
+                  onClick={() => {
+                    item.onClick();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform w-full`}
+                >
+                  <item.icon className={`w-6 h-6 ${item.color}`} />
+                  <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
+                </button>
+              ))}            </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100">
               <a href={`tel:${businessInfo.phone}`} className="w-full bg-slate-900 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />

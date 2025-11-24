@@ -12,7 +12,11 @@ import {
 } from 'lucide-react';
 import { businessInfo } from '../lib/data';
 
-export default function Footer() {
+interface FooterProps {
+  onQuoteClick: () => void;
+}
+
+export default function Footer({ onQuoteClick }: FooterProps) {
   return (
     <footer className="bg-slate-900 text-slate-300 pt-20 pb-10 px-4 border-t border-slate-800">
       <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -42,7 +46,15 @@ export default function Footer() {
             <li><Link href="/#summer" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Lawn Mowing</Link></li>
             <li><Link href="/#fall" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Weed Control</Link></li>
             <li><Link href="/#winter" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Snow Plowing</Link></li>
-            <li><Link href="/christmas-lights" className="hover:text-red-400 transition-colors flex items-center gap-2"><Sparkle className="w-3 h-3" /> Christmas Lights</Link></li>
+            <li>
+              <button
+                type="button"
+                onClick={onQuoteClick}
+                className="hover:text-red-400 transition-colors flex items-center gap-2 text-left w-full"
+              >
+                <Sparkle className="w-3 h-3" /> Christmas Lights
+              </button>
+            </li>
           </ul>
         </div>
 

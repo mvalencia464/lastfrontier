@@ -20,7 +20,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
         {children}
       </main>
 
-      <Footer />
+      <Footer onQuoteClick={() => setIsQuoteModalOpen(true)} />
 
       <QuoteModal 
         isOpen={isQuoteModalOpen} 
