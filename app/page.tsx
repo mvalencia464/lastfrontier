@@ -24,6 +24,8 @@ import {
   Sparkle
 } from 'lucide-react';
 import ReviewsSection from '../src/components/ReviewsSection';
+import AddressAutocomplete from '../src/components/AddressAutocomplete';
+import { submitQuote } from './actions';
 
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -33,12 +35,18 @@ export default function HomePage() {
   const [formStep, setFormStep] = useState(1);
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
+  const [contactInfo, setContactInfo] = useState({ address: '', email: '', phone: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // Modal Form State
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [modalFormStep, setModalFormStep] = useState(1);
   const [modalSelectedService, setModalSelectedService] = useState<string | null>(null);
   const [modalSelectedAddons, setModalSelectedAddons] = useState<string[]>([]);
+  const [modalContactInfo, setModalContactInfo] = useState({ address: '', email: '', phone: '' });
+  const [isModalSubmitting, setIsModalSubmitting] = useState(false);
+  const [modalSubmitStatus, setModalSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleModalServiceSelect = (id: string) => {
     setModalSelectedService(id);
@@ -50,6 +58,55 @@ export default function HomePage() {
       setModalSelectedAddons(modalSelectedAddons.filter(a => a !== addon));
     } else {
       setModalSelectedAddons([...modalSelectedAddons, addon]);
+    }
+  };
+
+  const handleQuoteSubmit = async (isModal: boolean) => {
+    const service = isModal ? modalSelectedService : selectedService;
+    const addons = isModal ? modalSelectedAddons : selectedAddons;
+    const info = isModal ? modalContactInfo : contactInfo;
+    const setSubmitting = isModal ? setIsModalSubmitting : setIsSubmitting;
+    const setStatus = isModal ? setModalSubmitStatus : setSubmitStatus;
+
+    setSubmitting(true);
+    setStatus('idle');
+
+    try {
+      const response = await submitQuote({
+        service,
+        addons,
+        ...info,
+      });
+
+      if (response.success) {
+        setStatus('success');
+        // Optional: Reset form or close modal after delay
+        if (isModal) {
+          setTimeout(() => {
+            setIsQuoteModalOpen(false);
+            setModalFormStep(1);
+            setModalSelectedService(null);
+            setModalSelectedAddons([]);
+            setModalContactInfo({ address: '', email: '', phone: '' });
+            setModalSubmitStatus('idle');
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            setFormStep(1);
+            setSelectedService(null);
+            setSelectedAddons([]);
+            setContactInfo({ address: '', email: '', phone: '' });
+            setSubmitStatus('idle');
+          }, 3000);
+        }
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting quote:', error);
+      setStatus('error');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -216,7 +273,7 @@ export default function HomePage() {
                 {businessInfo.phone}
               </a>
             </div>
-            <button 
+            <button
               onClick={() => setIsQuoteModalOpen(true)}
               className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/40 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group"
             >
@@ -345,8 +402,8 @@ export default function HomePage() {
 
           {/* Right Form Card */}
           <div className="lg:col-span-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
-            <div className="bg-slate-900/95 backdrop-blur-xl rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-700 relative overflow-hidden h-full min-h-[420px] flex flex-col justify-center">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600"></div>
+            <div className="bg-slate-900/95 backdrop-blur-xl rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-700 relative h-full min-h-[420px] flex flex-col justify-center">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 rounded-t-3xl"></div>
 
               <div className="mb-6">
                 <div className="flex justify-between items-center mb-1">
@@ -459,34 +516,81 @@ export default function HomePage() {
                 {/* Step 3: Contact Details */}
                 {formStep === 3 && (
                   <div className="space-y-4 animate-in slide-in-from-right fade-in duration-300">
-                    <div className="space-y-3">
-                      <div className="relative">
-                        <MapPin className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
-                        <input type="text" placeholder="Property Address" className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500" />
+                    {submitStatus === 'success' ? (
+                      <div className="text-center py-8 space-y-4">
+                        <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto">
+                          <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-white">Request Received!</h4>
+                          <p className="text-slate-400 mt-2">We'll be in touch shortly with your free quote.</p>
+                        </div>
                       </div>
-                      <div className="relative">
-                        <Mail className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
-                        <input type="email" placeholder="Email Address" className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500" />
-                      </div>
-                      <div className="relative">
-                        <Phone className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
-                        <input type="tel" placeholder="Phone Number" className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500" />
-                      </div>
-                    </div>
+                    ) : (
+                      <>
+                        <div className="space-y-3">
+                          <div className="relative z-20">
+                            <AddressAutocomplete
+                              value={contactInfo.address}
+                              onChange={(val) => setContactInfo({ ...contactInfo, address: val })}
+                            />
+                          </div>
+                          <div className="relative">
+                            <Mail className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
+                            <input
+                              type="email"
+                              placeholder="Email Address"
+                              value={contactInfo.email}
+                              onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
+                              className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500"
+                            />
+                          </div>
+                          <div className="relative">
+                            <Phone className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
+                            <input
+                              type="tel"
+                              placeholder="Phone Number"
+                              value={contactInfo.phone}
+                              onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
+                              className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500"
+                            />
+                          </div>
+                        </div>
 
-                    <div className="flex gap-3 pt-2">
-                      <button
-                        type="button"
-                        onClick={() => setFormStep(2)}
-                        className="px-4 py-3.5 rounded-xl border border-slate-700 text-slate-400 font-bold hover:bg-slate-800 hover:text-white transition-colors"
-                      >
-                        <ArrowLeft className="w-5 h-5" />
-                      </button>
-                      <button className="flex-1 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-emerald-900 hover:to-emerald-800 text-white font-bold py-3.5 rounded-xl shadow-lg transform transition-all active:scale-[0.98] flex items-center justify-center gap-2 group">
-                        <span>Submit Request</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-emerald-400" />
-                      </button>
-                    </div>
+                        {submitStatus === 'error' && (
+                          <p className="text-red-400 text-sm text-center">Something went wrong. Please try again.</p>
+                        )}
+
+                        <div className="flex gap-3 pt-2">
+                          <button
+                            type="button"
+                            onClick={() => setFormStep(2)}
+                            className="px-4 py-3.5 rounded-xl border border-slate-700 text-slate-400 font-bold hover:bg-slate-800 hover:text-white transition-colors"
+                            disabled={isSubmitting}
+                          >
+                            <ArrowLeft className="w-5 h-5" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleQuoteSubmit(false)}
+                            disabled={isSubmitting}
+                            className="flex-1 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-emerald-900 hover:to-emerald-800 text-white font-bold py-3.5 rounded-xl shadow-lg transform transition-all active:scale-[0.98] flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                          >
+                            {isSubmitting ? (
+                              <span className="flex items-center gap-2">
+                                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                                Sending...
+                              </span>
+                            ) : (
+                              <>
+                                <span>Submit Request</span>
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-emerald-400" />
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </>
+                    )}
                   </div>
                 )}
               </form>
@@ -549,10 +653,18 @@ export default function HomePage() {
                   </ul>
 
                   <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                    <a href="/christmas-lights" className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-red-900/20 hover:-translate-y-1">
+                    <button
+                      onClick={() => {
+                        setModalSelectedService('lights');
+                        setModalFormStep(2);
+                        setModalSelectedAddons([]);
+                        setIsQuoteModalOpen(true);
+                      }}
+                      className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-red-900/20 hover:-translate-y-1"
+                    >
                       <span>View Christmas Packages</span>
                       <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </button>
                     <a href={`tel:${businessInfo.phone}`} className="inline-flex items-center justify- Animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-xl transition-all border border-white/10">
                       <Phone className="w-4 h-4" />
                       <span>Call for Quote</span>
@@ -730,7 +842,7 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for a better looking lawn?</h2>
             <p className="text-emerald-200 text-lg max-w-2xl mx-auto mb-10">Join your neighbors in Anchorage & Palmer. Get a free, no-obligation quote today and let us handle the hard work.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button 
+              <button
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="bg-white text-emerald-900 font-bold py-4 px-8 rounded-xl shadow-xl hover:bg-emerald-50 transition-colors w-full sm:w-auto"
               >
@@ -812,7 +924,7 @@ export default function HomePage() {
       {/* --- QUOTE MODAL --- */}
       {isQuoteModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="relative w-full max-w-lg bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700 animate-in zoom-in-95 duration-200">
+          <div className="relative w-full max-w-lg bg-slate-900 rounded-2xl shadow-2xl border border-slate-700 animate-in zoom-in-95 duration-200">
             {/* Close Button */}
             <button
               onClick={() => setIsQuoteModalOpen(false)}
@@ -937,34 +1049,81 @@ export default function HomePage() {
                 {/* Step 3: Contact Details */}
                 {modalFormStep === 3 && (
                   <div className="space-y-4 animate-in slide-in-from-right fade-in duration-300">
-                    <div className="space-y-3">
-                      <div className="relative">
-                        <MapPin className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
-                        <input type="text" placeholder="Property Address" className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500" />
+                    {modalSubmitStatus === 'success' ? (
+                      <div className="text-center py-8 space-y-4">
+                        <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto">
+                          <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-white">Request Received!</h4>
+                          <p className="text-slate-400 mt-2">We'll be in touch shortly with your free quote.</p>
+                        </div>
                       </div>
-                      <div className="relative">
-                        <Mail className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
-                        <input type="email" placeholder="Email Address" className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500" />
-                      </div>
-                      <div className="relative">
-                        <Phone className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
-                        <input type="tel" placeholder="Phone Number" className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500" />
-                      </div>
-                    </div>
+                    ) : (
+                      <>
+                        <div className="space-y-3">
+                          <div className="relative z-20">
+                            <AddressAutocomplete
+                              value={modalContactInfo.address}
+                              onChange={(val) => setModalContactInfo({ ...modalContactInfo, address: val })}
+                            />
+                          </div>
+                          <div className="relative">
+                            <Mail className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
+                            <input
+                              type="email"
+                              placeholder="Email Address"
+                              value={modalContactInfo.email}
+                              onChange={(e) => setModalContactInfo({ ...modalContactInfo, email: e.target.value })}
+                              className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500"
+                            />
+                          </div>
+                          <div className="relative">
+                            <Phone className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
+                            <input
+                              type="tel"
+                              placeholder="Phone Number"
+                              value={modalContactInfo.phone}
+                              onChange={(e) => setModalContactInfo({ ...modalContactInfo, phone: e.target.value })}
+                              className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 focus:bg-slate-900 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-white placeholder:text-slate-500"
+                            />
+                          </div>
+                        </div>
 
-                    <div className="flex gap-3 pt-2">
-                      <button
-                        type="button"
-                        onClick={() => setModalFormStep(2)}
-                        className="px-4 py-3.5 rounded-xl border border-slate-700 text-slate-400 font-bold hover:bg-slate-800 hover:text-white transition-colors"
-                      >
-                        <ArrowLeft className="w-5 h-5" />
-                      </button>
-                      <button className="flex-1 bg-red-600 hover:bg-red-500 text-white font-bold py-3.5 rounded-xl shadow-lg transform transition-all active:scale-[0.98] flex items-center justify-center gap-2 group">
-                        <span>Submit Request</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-white" />
-                      </button>
-                    </div>
+                        {modalSubmitStatus === 'error' && (
+                          <p className="text-red-400 text-sm text-center">Something went wrong. Please try again.</p>
+                        )}
+
+                        <div className="flex gap-3 pt-2">
+                          <button
+                            type="button"
+                            onClick={() => setModalFormStep(2)}
+                            className="px-4 py-3.5 rounded-xl border border-slate-700 text-slate-400 font-bold hover:bg-slate-800 hover:text-white transition-colors"
+                            disabled={isModalSubmitting}
+                          >
+                            <ArrowLeft className="w-5 h-5" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleQuoteSubmit(true)}
+                            disabled={isModalSubmitting}
+                            className="flex-1 bg-red-600 hover:bg-red-500 text-white font-bold py-3.5 rounded-xl shadow-lg transform transition-all active:scale-[0.98] flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                          >
+                            {isModalSubmitting ? (
+                              <span className="flex items-center gap-2">
+                                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                                Sending...
+                              </span>
+                            ) : (
+                              <>
+                                <span>Submit Request</span>
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-white" />
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </>
+                    )}
                   </div>
                 )}
               </form>
