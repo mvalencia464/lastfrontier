@@ -107,36 +107,23 @@ export default function Header({ onQuoteClick }: HeaderProps) {
           <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-2xl animate-in slide-in-from-top-5 duration-200">
             <div className="p-4 grid grid-cols-2 gap-3">
               {[
-                { name: 'Spring Cleanup', icon: Leaf, color: 'text-emerald-600', bg: 'bg-emerald-50' },
-                { name: 'Lawn Mowing', icon: Sun, color: 'text-amber-500', bg: 'bg-amber-50' },
-                { name: 'Snow Plowing', icon: Snowflake, color: 'text-sky-500', bg: 'bg-sky-50' },
-                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', href: '/christmas-lights' },
-              ].map((item) => (
-                item.href ? (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform`}
-                  >
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
-                    <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
-                  </Link>
-                ) : (
-                  <button
-                    key={item.name}
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      onQuoteClick();
-                    }}
-                    className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform w-full`}
-                  >
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
-                    <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
-                  </button>
-                )
-              ))}
-            </div>
+                { name: 'Spring Cleanup', icon: Leaf, color: 'text-emerald-600', bg: 'bg-emerald-50', onClick: () => onQuoteClick() },
+                { name: 'Lawn Mowing', icon: Sun, color: 'text-amber-500', bg: 'bg-amber-50', onClick: () => onQuoteClick() },
+                { name: 'Snow Plowing', icon: Snowflake, color: 'text-sky-500', bg: 'bg-sky-50', onClick: () => onQuoteClick() },
+                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', onClick: () => { onQuoteClick(); } },
+                            ].map((item) => (
+                              <button
+                                key={item.name}
+                                onClick={() => {
+                                  setIsMobileMenuOpen(false);
+                                  if (item.onClick) item.onClick();
+                                }}
+                                className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform w-full`}
+                              >
+                                <item.icon className={`w-6 h-6 ${item.color}`} />
+                                <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
+                              </button>
+                            ))}            </div>
              <div className="p-4 border-t border-slate-100 flex flex-col gap-2">
                 <Link href="/our-process" className="p-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 block text-center">Our Process</Link>
                 <Link href="/careers" className="p-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 block text-center">Careers</Link>

@@ -1055,7 +1055,18 @@ export default function HomePage() {
               <li><a href="#summer" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Lawn Mowing</a></li>
               <li><a href="#fall" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Weed Control</a></li>
               <li><a href="#winter" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Snow Plowing</a></li>
-              <li><Link href="/christmas-lights" className="hover:text-red-400 transition-colors flex items-center gap-2"><Sparkle className="w-3 h-3" /> Christmas Lights</Link></li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsQuoteModalOpen(true);
+                    setModalSelectedService('lights');
+                  }}
+                  className="hover:text-red-400 transition-colors flex items-center gap-2 text-left w-full"
+                >
+                  <Sparkle className="w-3 h-3" /> Christmas Lights
+                </button>
+              </li>
             </ul>
           </div>
 
