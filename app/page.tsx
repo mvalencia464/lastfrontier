@@ -21,11 +21,13 @@ import {
   ArrowRight,
   CheckCircle2,
   ArrowLeft,
-  Sparkle
+  Sparkle,
+  Upload,
+  ImageIcon
 } from 'lucide-react';
 import ReviewsSection from '../src/components/ReviewsSection';
 import AddressAutocomplete from '../src/components/AddressAutocomplete';
-import { submitQuote } from './actions';
+import { submitQuote, uploadProjectImage } from './actions';
 
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,6 +40,10 @@ export default function HomePage() {
   const [contactInfo, setContactInfo] = useState({ address: '', email: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [contactId, setContactId] = useState<string | null>(null);
+  const [uploadedImage, setUploadedImage] = useState<File | null>(null);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const [imageUploadStatus, setImageUploadStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // Modal Form State
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -47,6 +53,10 @@ export default function HomePage() {
   const [modalContactInfo, setModalContactInfo] = useState({ address: '', email: '', phone: '' });
   const [isModalSubmitting, setIsModalSubmitting] = useState(false);
   const [modalSubmitStatus, setModalSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [modalContactId, setModalContactId] = useState<string | null>(null);
+  const [modalUploadedImage, setModalUploadedImage] = useState<File | null>(null);
+  const [isModalUploadingImage, setIsModalUploadingImage] = useState(false);
+  const [modalImageUploadStatus, setModalImageUploadStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleModalServiceSelect = (id: string) => {
     setModalSelectedService(id);
@@ -67,6 +77,7 @@ export default function HomePage() {
     const info = isModal ? modalContactInfo : contactInfo;
     const setSubmitting = isModal ? setIsModalSubmitting : setIsSubmitting;
     const setStatus = isModal ? setModalSubmitStatus : setSubmitStatus;
+    const setContact = isModal ? setModalContactId : setContactId;
 
     setSubmitting(true);
     setStatus('idle');
@@ -78,27 +89,10 @@ export default function HomePage() {
         ...info,
       });
 
-      if (response.success) {
+      if (response.success && response.contactId) {
         setStatus('success');
-        // Optional: Reset form or close modal after delay
-        if (isModal) {
-          setTimeout(() => {
-            setIsQuoteModalOpen(false);
-            setModalFormStep(1);
-            setModalSelectedService(null);
-            setModalSelectedAddons([]);
-            setModalContactInfo({ address: '', email: '', phone: '' });
-            setModalSubmitStatus('idle');
-          }, 3000);
-        } else {
-          setTimeout(() => {
-            setFormStep(1);
-            setSelectedService(null);
-            setSelectedAddons([]);
-            setContactInfo({ address: '', email: '', phone: '' });
-            setSubmitStatus('idle');
-          }, 3000);
-        }
+        setContact(response.contactId);
+        // Don't auto-reset - let user upload image first
       } else {
         setStatus('error');
       }
@@ -107,6 +101,73 @@ export default function HomePage() {
       setStatus('error');
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  const handleImageUpload = async (isModal: boolean) => {
+    const image = isModal ? modalUploadedImage : uploadedImage;
+    const contact = isModal ? modalContactId : contactId;
+    const setUploading = isModal ? setIsModalUploadingImage : setIsUploadingImage;
+    const setStatus = isModal ? setModalImageUploadStatus : setImageUploadStatus;
+
+    if (!image || !contact) return;
+
+    setUploading(true);
+    setStatus('idle');
+
+    try {
+      // Convert file to base64
+      const base64 = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const result = reader.result as string;
+          // Remove data URL prefix (e.g., "data:image/png;base64,")
+          const base64Data = result.split(',')[1];
+          resolve(base64Data);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(image);
+      });
+
+      const response = await uploadProjectImage(contact, {
+        name: image.name,
+        type: image.type,
+        base64: base64,
+      });
+
+      if (response.success) {
+        setStatus('success');
+        // Auto-close after successful upload
+        setTimeout(() => {
+          if (isModal) {
+            setIsQuoteModalOpen(false);
+            setModalFormStep(1);
+            setModalSelectedService(null);
+            setModalSelectedAddons([]);
+            setModalContactInfo({ address: '', email: '', phone: '' });
+            setModalSubmitStatus('idle');
+            setModalContactId(null);
+            setModalUploadedImage(null);
+            setModalImageUploadStatus('idle');
+          } else {
+            setFormStep(1);
+            setSelectedService(null);
+            setSelectedAddons([]);
+            setContactInfo({ address: '', email: '', phone: '' });
+            setSubmitStatus('idle');
+            setContactId(null);
+            setUploadedImage(null);
+            setImageUploadStatus('idle');
+          }
+        }, 2000);
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      setStatus('error');
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -517,7 +578,7 @@ export default function HomePage() {
                 {formStep === 3 && (
                   <div className="space-y-4 animate-in slide-in-from-right fade-in duration-300">
                     {submitStatus === 'success' ? (
-                      <div className="text-center py-8 space-y-4">
+                      <div className="text-center py-6 space-y-4">
                         <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto">
                           <CheckCircle2 className="w-8 h-8 text-emerald-400" />
                         </div>
@@ -525,6 +586,90 @@ export default function HomePage() {
                           <h4 className="text-xl font-bold text-white">Request Received!</h4>
                           <p className="text-slate-400 mt-2">We'll be in touch shortly with your free quote.</p>
                         </div>
+
+                        {/* Optional Image Upload */}
+                        {!uploadedImage && imageUploadStatus !== 'success' && (
+                          <div className="mt-6 space-y-3">
+                            <p className="text-sm text-slate-300 font-medium">Have a photo of your project area?</p>
+                            <label className="block cursor-pointer">
+                              <input
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                onChange={(e) => {
+                                  const file = e.target.files?.[0];
+                                  if (file) setUploadedImage(file);
+                                }}
+                              />
+                              <div className="border-2 border-dashed border-slate-600 hover:border-emerald-500 rounded-xl p-6 transition-colors bg-slate-800/50 hover:bg-slate-800">
+                                <Upload className="w-8 h-8 text-slate-400 mx-auto mb-2" />
+                                <p className="text-sm text-slate-300 font-medium">Click to upload image</p>
+                                <p className="text-xs text-slate-500 mt-1">JPG, PNG, or WebP (max 10MB)</p>
+                              </div>
+                            </label>
+                          </div>
+                        )}
+
+                        {/* Show selected image */}
+                        {uploadedImage && imageUploadStatus !== 'success' && (
+                          <div className="mt-4 space-y-3">
+                            <div className="relative bg-slate-800 rounded-xl p-3 flex items-center gap-3">
+                              <ImageIcon className="w-5 h-5 text-emerald-400" />
+                              <span className="text-sm text-white flex-1 truncate">{uploadedImage.name}</span>
+                              <button
+                                onClick={() => setUploadedImage(null)}
+                                className="text-slate-400 hover:text-white"
+                              >
+                                <X className="w-4 h-4" />
+                              </button>
+                            </div>
+                            <button
+                              onClick={() => handleImageUpload(false)}
+                              disabled={isUploadingImage}
+                              className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition-all disabled:opacity-70"
+                            >
+                              {isUploadingImage ? (
+                                <span className="flex items-center justify-center gap-2">
+                                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                                  Uploading...
+                                </span>
+                              ) : (
+                                'Upload Image'
+                              )}
+                            </button>
+                          </div>
+                        )}
+
+                        {/* Upload success */}
+                        {imageUploadStatus === 'success' && (
+                          <div className="mt-4 p-3 bg-emerald-900/30 border border-emerald-500/30 rounded-xl">
+                            <p className="text-sm text-emerald-400 font-medium">✓ Image uploaded successfully!</p>
+                          </div>
+                        )}
+
+                        {/* Upload error */}
+                        {imageUploadStatus === 'error' && (
+                          <div className="mt-4 p-3 bg-red-900/30 border border-red-500/30 rounded-xl">
+                            <p className="text-sm text-red-400 font-medium">Failed to upload image. Please try again.</p>
+                          </div>
+                        )}
+
+                        {/* Skip button */}
+                        {!uploadedImage && imageUploadStatus !== 'success' && (
+                          <button
+                            onClick={() => {
+                              setFormStep(1);
+                              setSelectedService(null);
+                              setSelectedAddons([]);
+                              setContactInfo({ address: '', email: '', phone: '' });
+                              setSubmitStatus('idle');
+                              setContactId(null);
+                            }}
+                            className="text-sm text-slate-400 hover:text-white transition-colors underline"
+                          >
+                            Skip for now
+                          </button>
+                        )}
                       </div>
                     ) : (
                       <>
