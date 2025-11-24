@@ -93,7 +93,7 @@ export async function submitQuote(data: QuoteData): Promise<SubmitQuoteResponse>
       ],
     };
 
-    const response = await fetch(`${GHL_API_BASE}/contacts/`, {
+    const response = await fetch(`${GHL_API_BASE}/contacts/upsert`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${GHL_API_TOKEN}`,
