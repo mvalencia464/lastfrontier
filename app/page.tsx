@@ -205,12 +205,16 @@ export default function HomePage() {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
 
-    // Check URL params for pre-selection
+    // Check URL params for pre-selection and open modal for lights service
     const params = new URLSearchParams(window.location.search);
     if (params.get('service') === 'lights') {
       setSelectedService('lights');
       setFormStep(2);
-      // Scroll to form
+      // Open quote modal and set modal state
+      setIsQuoteModalOpen(true);
+      setModalSelectedService('lights');
+      setModalFormStep(1);
+      // Scroll to form (optional)
       const formElement = document.querySelector('form');
       if (formElement) formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
@@ -360,7 +364,7 @@ export default function HomePage() {
                 { name: 'Spring Cleanup', icon: Leaf, color: 'text-emerald-600', bg: 'bg-emerald-50' },
                 { name: 'Lawn Mowing', icon: Sun, color: 'text-amber-500', bg: 'bg-amber-50' },
                 { name: 'Snow Plowing', icon: Snowflake, color: 'text-sky-500', bg: 'bg-sky-50' },
-                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', href: '/christmas-lights' },
+                { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', onClick: () => { setIsQuoteModalOpen(true); setModalSelectedService('lights'); setModalFormStep(1); } },
               ].map((item) => (
                 <a key={item.name} href={item.href || '#'} className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform`}>
                   <item.icon className={`w-6 h-6 ${item.color}`} />
@@ -1031,7 +1035,7 @@ export default function HomePage() {
               <li><a href="#summer" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Lawn Mowing</a></li>
               <li><a href="#fall" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Weed Control</a></li>
               <li><a href="#winter" className="hover:text-emerald-400 transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Snow Plowing</a></li>
-              <li><a href="/christmas-lights" className="hover:text-red-400 transition-colors flex items-center gap-2"><Sparkle className="w-3 h-3" /> Christmas Lights</a></li>
+              <li><Link href="/?service=lights" className="hover:text-red-400 transition-colors flex items-center gap-2"><Sparkle className="w-3 h-3" /> Christmas Lights</Link></li>
             </ul>
           </div>
 
