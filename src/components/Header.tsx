@@ -112,10 +112,29 @@ export default function Header({ onQuoteClick }: HeaderProps) {
                 { name: 'Snow Plowing', icon: Snowflake, color: 'text-sky-500', bg: 'bg-sky-50' },
                 { name: 'Christmas Lights', icon: Sparkle, color: 'text-red-600', bg: 'bg-red-50', href: '/christmas-lights' },
               ].map((item) => (
-                <a key={item.name} href={item.href || '#'} className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform`}>
-                  <item.icon className={`w-6 h-6 ${item.color}`} />
-                  <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
-                </a>
+                item.href ? (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform`}
+                  >
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                    <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
+                  </Link>
+                ) : (
+                  <button
+                    key={item.name}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      onQuoteClick();
+                    }}
+                    className={`${item.bg} p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center active:scale-95 transition-transform w-full`}
+                  >
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                    <span className={`text-sm font-bold ${item.color}`}>{item.name}</span>
+                  </button>
+                )
               ))}
             </div>
              <div className="p-4 border-t border-slate-100 flex flex-col gap-2">
