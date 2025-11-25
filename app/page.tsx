@@ -725,7 +725,7 @@ export default function HomePage() {
                               </div>
                               <div className="ml-3 text-xs leading-5">
                                 <label htmlFor="sms-consent" className="font-medium text-slate-300">
-                                  I agree to receive marketing messaging from Last Frontier Lawns at the phone number provided above. I understand I will receive 2 messages a month, data rates may apply, reply STOP to opt out
+                                  I agree to the <Link href="/terms-of-service" className="text-emerald-400 hover:text-emerald-300 underline" target="_blank">Terms of Service</Link> and <Link href="/privacy-policy" className="text-emerald-400 hover:text-emerald-300 underline" target="_blank">Privacy Policy</Link>. I agree to receive marketing messaging from Last Frontier Lawns at the phone number provided above. I understand I will receive 2 messages a month, data rates may apply, reply STOP to opt out
                                 </label>
                               </div>
                             </div>
@@ -863,6 +863,7 @@ export default function HomePage() {
                     >
                       {[
                         "https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/691fa1b75bbf7f1c42fb6e66.webp",
+                        "https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/69251f038e95934cb424e273.webp",
                         "/christmas-carousel-2.png",
                         "/christmas-carousel-3.png",
                         "/christmas-carousel-4.webp"
@@ -1288,7 +1289,7 @@ export default function HomePage() {
                               </div>
                               <div className="ml-3 text-xs leading-5">
                                 <label htmlFor="modal-sms-consent" className="font-medium text-slate-300">
-                                  I agree to receive marketing messaging from Last Frontier Lawns at the phone number provided above. I understand I will receive 2 messages a month, data rates may apply, reply STOP to opt out
+                                  I agree to the <Link href="/terms-of-service" className="text-emerald-400 hover:text-emerald-300 underline" target="_blank">Terms of Service</Link> and <Link href="/privacy-policy" className="text-emerald-400 hover:text-emerald-300 underline" target="_blank">Privacy Policy</Link>. I agree to receive marketing messaging from Last Frontier Lawns at the phone number provided above. I understand I will receive 2 messages a month, data rates may apply, reply STOP to opt out
                                 </label>
                               </div>
                             </div>
