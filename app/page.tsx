@@ -864,7 +864,7 @@ export default function HomePage() {
                       {[
                         "https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/691fa1b75bbf7f1c42fb6e66.webp",
                         "https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/6927eb7557189637cd50ee51.webp",
-                        "/christmas-carousel-2.png",
+                        "https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/69251f038e95934cb424e273.webp",
                         "/christmas-carousel-3.png",
                         "/christmas-carousel-4.webp"
                       ].map((src, i) => (
