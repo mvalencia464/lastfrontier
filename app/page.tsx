@@ -26,6 +26,7 @@ import {
   ImageIcon
 } from 'lucide-react';
 import ReviewsSection from '../src/components/ReviewsSection';
+import ProjectsGallery from '../src/components/ProjectsGallery';
 import AddressAutocomplete from '../src/components/AddressAutocomplete';
 import { submitQuote, uploadProjectImage } from './actions';
 import Link from 'next/link';
@@ -1004,6 +1005,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* --- PROJECTS GALLERY --- */}
+      <ProjectsGallery />
 
       {/* --- REVIEWS SECTION --- */}
       <ReviewsSection />
