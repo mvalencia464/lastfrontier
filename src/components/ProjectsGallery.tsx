@@ -40,6 +40,11 @@ export default function ProjectsGallery() {
       src: 'https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/69251f038e95934cb424e273.webp',
       alt: 'Christmas Lights Project 6',
       title: 'Custom Design'
+    },
+    {
+      src: 'https://storage.googleapis.com/msgsndr/wnfQfg2IIyeI7768WeGf/media/69324bd8e0f0921fcdac4911.png',
+      alt: 'Christmas Lights Project 7',
+      title: 'Holiday Lighting'
     }
   ];
 
